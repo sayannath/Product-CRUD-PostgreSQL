@@ -19,7 +19,10 @@ exports.createProduct = (req, res) => {
             messsage: "Unable to CREATE Product!",
           });
         }
-        res.status(200).json(product.rows[0]);
+        res.status(200).json({
+          success: "true",
+          data: product.rows[0]
+        });
       }
     );
   } catch (err) {
